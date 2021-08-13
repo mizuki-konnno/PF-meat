@@ -1,24 +1,23 @@
-# README
+# <ECサイト "meat" >
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+< お肉の販売のECサイト >
 
-* Ruby version
+### 使い方
 
-* System dependencies
+< >
 
-* Configuration
 
-* Database creation
+## 開発環境
 
-* Database initialization
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JS ライブラリ：jQuery
+- IDE：Cloud9
 
-* How to run the test suite
+## 使用素材
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名と URL を明記してください。（後ほど記述）
+- 使用しない場合は、使用素材の項目を README から削除してください。
