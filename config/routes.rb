@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   }
 
   scope module: :public do
-    # root 'items#top'
+    root 'items#top'
     get 'customers/mypage' => 'customers#show', as: 'mypage'
     get 'customers/information/edit' => 'customers#edit', as: 'edit_information'
     patch 'customers/information' => 'customers#update', as: 'update_information'
