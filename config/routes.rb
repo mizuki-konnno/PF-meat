@@ -22,8 +22,11 @@ Rails.application.routes.draw do
     registrations: 'public/registrations',
   }
 
+
+
   scope module: :public do
     root 'items#top'
+    get "home/about" => "homes#about", as: 'about'
     get 'customers/mypage' => 'customers#show', as: 'mypage'
     get 'customers/information/edit' => 'customers#edit', as: 'edit_information'
     patch 'customers/information' => 'customers#update', as: 'update_information'
