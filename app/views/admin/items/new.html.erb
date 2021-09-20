@@ -1,11 +1,11 @@
 <div class = "container">
   <div class = "row">
-    <div class = "col">
+    <div class = "col text-center my-5">
       <h1>商品新規登録</h1>
     </div>
   </div>
   <div class = "row" >
-    <div class = "col">
+    <div class = "col-8 mx-auto">
       <%= form_with model: @item, url: admin_items_path, local:true do |f| %>
       <table class ="table">
         <tr>
@@ -18,7 +18,7 @@
         </tr>
         <tr>
           <td><%= f.label :introduction, "商品説明" %></td>
-          <td><%= f.text_area :introduction, rows: 3 %></td>
+          <td><%= f.text_area :introduction, rows: 3, class: 'form-control' %></td>
         </tr>
         <tr>
           <td><%= f.label :genre_id, "ジャンル" %></td>
@@ -31,14 +31,16 @@
         <tr>
           <td><%= f.label :sales_status, "販売ステータス" %></td>
           <td class="select_field">
-						<%= f.radio_button :is_active, true %>
+						<%= f.radio_button :is_active, '販売中' %>
 						<%= f.label :is_active, "販売中", class: "text-active" %>
-						<%= f.radio_button :is_active, false %>
+						<%= f.radio_button :is_active, '販売停止中' %>
 						<%= f.label :is_active, "販売停止中", class: "text-invalid" %>
 					</td>
         </tr>
       </table>
-       <%= f.submit "新規登録", class: "btn btn-success btn-lg"%>
+      <div class = "col-12 text-center my-5">
+        <%= f.submit "新規登録", class: "btn btn-link btn-lg"%>
+      </div>
      <% end %>
     </div>
   </div>
