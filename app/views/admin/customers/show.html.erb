@@ -1,12 +1,17 @@
-<div class='container'>
-  <div class='col-md-8 offset-md-4'>
-    <h2 class = "my-3 py-3"><%= @customer.last_name%><%= @customer.first_name%>さんの会員詳細</h2>
+<div class="container">
+  <div class = "row">
+    <div class="col mx-auto text-center">
+      <h2 class = "my-3 py-3"><%= @customer.full_name%>さんの会員詳細</h2>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col mx-auto text-center">
       <table class="table table-borderless">
         <tr>
           <td>会員ID</td><td><%= @customer.id%></td>
         </tr>
         <tr>
-          <td>氏名</td><td><%= @customer.last_name%><%= @customer.first_name%></td>
+          <td>氏名</td><td><%= @customer.full_name %></td>
         </tr>
         <tr>
           <td>フリガナ</td><td><%= @customer.last_name_kana%><%= @customer.first_name_kana%></td>
@@ -20,25 +25,32 @@
 　　　    <td><%= @customer.address%></td>
 　　　  </tr>
 　　　  <tr>
-　　　    <td>電話番号</td>
-　　　    <td><%= @customer.phone_number%></td>
-　　　  </tr>
-　　　  <tr>
-　　　    <td>メールアドレス</td>
-　　　    <td><%= @customer.email%></td>
-　　　  </tr>
-　　　  <tr>
-　　　    <td>会員ステータス</td>
-　　　    <td><%= @customer.users_srarus%></td>
-　　　  </tr>
-　　　  <tr>
-　　　    <td></td>
-　　　    <td>
-　　　      <%= link_to '編集する',edit_admins_customer_path(@customer.id), class:"btn btn-success" %>　
-　　　      <%= link_to '注文履歴一覧を見る',admin_root_path(order_sort: 0), class:"btn btn-info" %>
-　　　    </td>
-　　　  </tr>
-      </table>
+　　　     <td>電話番号</td>
+　　　     <td><%= @customer.telephone_number%></td>
+　　　   </tr>
+　　　   <tr>
+　　　     <td>メールアドレス</td>
+　　       <td><%= @customer.email%></td>
+　 　    </tr>
+   　　    <tr>
+   　　      <td>会員ステータス</td>
+   　　      <td>
+				    <% if @customer.is_active? %>
+						  <span class="text-active">有効</span>
+					  <% else %>
+						  <span class="text-invalid">退会済み</span>
+					  <% end %>
+				    </td>
+　　　    </tr>
+        </table>
+      </div>
+    </div>
+  <div class = "row">
+    <div class = "col-2 mx-auto my-5">
+　　  <%= link_to '編集する',edit_admin_customer_path(@customer.id), class:"btn btn-success" %>
+    </div>
+    <div class = "col-3 mx-auto my-5">
+      <%= link_to '注文履歴一覧を見る',admin_top_path, class:"btn btn-info" %>
     </div>
   </div>
 </div>
